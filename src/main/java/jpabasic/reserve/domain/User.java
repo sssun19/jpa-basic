@@ -42,4 +42,12 @@ public class User {
         this.name = newName;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", createDate=" + createDate +
+                '}';
+    }
 }
