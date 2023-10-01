@@ -978,21 +978,114 @@ SELECT|sys.sys_config
       <ObjectGrants>SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,RELOAD,SHUTDOWN,PROCESS,FILE,REFERENCES,INDEX,ALTER,SHOW DATABASES,SUPER,CREATE TEMPORARY TABLES,LOCK TABLES,EXECUTE,REPLICATION SLAVE,REPLICATION CLIENT,CREATE VIEW,SHOW VIEW,CREATE ROUTINE,ALTER ROUTINE,CREATE USER,EVENT,TRIGGER,CREATE TABLESPACE,CREATE ROLE,DROP ROLE!
 </ObjectGrants>
     </user>
-    <table id="306" parent="5" name="user"/>
-    <column id="307" parent="306" name="email">
+    <table id="306" parent="5" name="access_log"/>
+    <table id="307" parent="5" name="hotel_info"/>
+    <table id="308" parent="5" name="id_seq"/>
+    <table id="309" parent="5" name="review"/>
+    <table id="310" parent="5" name="user"/>
+    <column id="311" parent="306" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="312" parent="306" name="path">
+      <Position>2</Position>
+      <DataType>varchar(200)|0s</DataType>
+    </column>
+    <column id="313" parent="306" name="accessed">
+      <Position>3</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <column id="314" parent="307" name="hotel_id">
       <Position>1</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="308" parent="306" name="name">
+    <column id="315" parent="307" name="nm">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
     </column>
-    <column id="309" parent="306" name="create_date">
+    <column id="316" parent="307" name="year">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="317" parent="307" name="grade">
+      <Position>4</Position>
+      <DataType>varchar(2)|0s</DataType>
+    </column>
+    <column id="318" parent="307" name="created">
+      <Position>5</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <column id="319" parent="307" name="modified">
+      <Position>6</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <key id="320" parent="307" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>hotel_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="321" parent="308" name="entity">
+      <Position>1</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="322" parent="308" name="nextval">
+      <Position>2</Position>
+      <DataType>bigint|0s</DataType>
+    </column>
+    <key id="323" parent="308" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>entity</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="324" parent="309" name="review_id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="325" parent="309" name="hotel_id">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="326" parent="309" name="mark">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="327" parent="309" name="writer_name">
+      <Position>4</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </column>
+    <column id="328" parent="309" name="comment">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="329" parent="309" name="created">
+      <Position>6</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <key id="330" parent="309" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>review_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="331" parent="310" name="email">
+      <Position>1</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="332" parent="310" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+    </column>
+    <column id="333" parent="310" name="create_date">
       <Position>3</Position>
       <DataType>datetime|0s</DataType>
     </column>
-    <key id="310" parent="306" name="PRIMARY">
+    <key id="334" parent="310" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>email</ColNames>
       <Primary>1</Primary>
